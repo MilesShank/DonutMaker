@@ -3,113 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 4 Project</title>
+    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
+    <title>FREDDY B DONUTS</title>
 </head>
 <body>
+<container>
+    <header>
+<h1>Freddy B Bakers Big Donut Bonanza<br>
+    <img src = "src/images/donutt.png" class = "donutimg">
+</h1>
 
-    <div class="container">
+<nav>
+    <element class = "nav1"><h3 class = "about-fred">About Freddy B</h3>
+              
+        <div class = "fred-hide">  <img src = "src/images/mr.wolf.png" class = "wolfimg"><p>Freddy B is a big buddy who's bananas for baking. Raised in the woods by wolves who love donuts, Fred now bakes with the power of an intel core processor inside your computer.</p></div>
+
+    </element>
+    <element class = "nav2"><h3 class = "cookie-clicker">Cookie Clicker Credits</h3>
+        <div class = "cookie-hide"><a href= "https://orteil.dashnet.org/cookieclicker/"><p>Cookie Clicker is the original desert-clicking mania game. Cookie-click here to take a look.</p></a></div>
+    </element>
+    <element class = "nav3"> <h3 class = "contact">Contact me </h3>
+        <div class = "contact-hide"><p>Miles Shank is a full-stack developer having some fun with javascript. <br>Check out their <a href="https://milesshank.github.io/">Github</a> and <a href="https://www.linkedin.com/in/miles-shank/">Linkedin</a>!
+            
+        </p></div>
+    </element>
+
+</nav>
+</header>
+    <section class="game">
         <div class="anchor"></div>
+        <h2>Let's help make some donuts!</h2>
+        <section class = "donutbrigade">
+        <img src = "src/images/donutt.png" class = "donutimg">
+    </section>
+  
     </div>
+
     <div class ="someVariables">
         <p class = "donutNumber"></p>
         <p class ="autoClickerPrice"></p>
         <p class ="multiplierPrice"></p>
         <p class = "autoClickers"></p>
         <p class = "multiplierNumber"></p>
-        <!-- <p class = "multiplyRateDisplay"></p> -->
 
+    <section class = "buttons">
     <form>
+
         <input type = "button" value = "Make Donuts"class = "donutButton" onclick = "makeDonuts();">
         <input type = "button" value = "Purchase Autoclicker "class = "autoClickerButton" onclick = "purchaseAutoClicker()" >
         <input type = "button" value = "Purchase Multiplier "class = "multiplierButton" onclick = "purchaseMultiplier()" >
     </form>
     </div>
-    <!-- <script src="/src/app.js"></script> -->
-<script>
-    let autoClickerPrice = 100;
-    let multiplierPrice = 10;
-    const donutNumberDisplay = document.querySelector('.donutNumber');
-    const autoClickerPriceDisplay = document.querySelector('.autoClickerPrice');
-    const autoClickerNumberDisplay = document.querySelector('.autoClickers');
-    const multiplierNumberDisplay = document.querySelector('.multiplierNumber');
-    const multiplierPriceDisplay = document.querySelector('.multiplierPrice');
-    // const multiplyRateDisplay = document.querySelector('.multiplyRateDisplay'); 
-    const autoClickerButton = document.querySelector('.autoClickerButton');
-    const multiplierButton = document.querySelector('.multiplierButton');
-
-    let autoClickerStorage = 0;
-    let multiplierStorage = 0;
-    let donutNumber = 0;
-    let donutsToMake = 1.2;
-    donutNumberDisplay.textContent = 0 + " donuts";
-    autoClickerNumberDisplay.textContent = 0 + " auto-clickers";
-    autoClickerPriceDisplay.textContent = "current price of auto-clickers: " + autoClickerPrice; 
-    multiplierPriceDisplay.textContent = "current price of donut multipliers: " + multiplierPrice;
-    multiplierNumberDisplay.textContent = "number of multipliers: " + 0;
-    autoClickerButton.style.visibility="hidden";
-    multiplierButton.style.visibility="hidden";
-    
-    // donutButton = document.createElement('button');
-    // donutButton.textContent = 'Make Donuts';
-    // document.body.append(donutButton);
-    // donutButton.addEventListener('click',makeDonuts);
-
-    setInterval(autoDonuts, 1000);
-
-    function updateLoop(){
-       
-        if (donutNumber >= autoClickerPrice){
-            autoClickerButton.style.visibility="visible";
-     
-        }else{
-            autoClickerButton.style.visibility="hidden";
-        }
-
-        if (donutNumber >= multiplierPrice){
-            multiplierButton.style.visibility="visible";
-     
-        }else{
-            multiplierButton.style.visibility="hidden";
-        }
-
-        donutNumberDisplay.textContent = Math.round(donutNumber) + " donuts";
-        autoClickerNumberDisplay.textContent = autoClickerStorage + " auto-clickers";
-        autoClickerPriceDisplay.textContent = "current price of auto-clickers: " + Math.ceil(autoClickerPrice) 
-        multiplierNumberDisplay.textContent = "number of multipliers: " + multiplierStorage;
-        multiplierPriceDisplay.textContent = "current price of donut multipliers: " + Math.ceil(multiplierPrice);
-    }
-    function makeDonuts(){
-        donutNumber += Math.pow(donutsToMake, multiplierStorage);
-        updateLoop();
-
-    }
-
-    
-    function purchaseAutoClicker(){
-
-        donutNumber -=autoClickerPrice;
-                if(donutNumber<autoClickerPrice){
-            autoClickerButton.style.visibility="hidden";
-        }
-        autoClickerStorage += 1;
-        autoClickerPrice += (autoClickerPrice/10);
-        updateLoop();
-    }
-
-    function purchaseMultiplier(){
-        donutNumber -=multiplierPrice;
-                if(donutNumber<multiplierPrice){
-            multiplierButton.style.visibility="hidden";
-        }
-        multiplierStorage += 1;
-        multiplierPrice += (multiplierPrice/10);
-        updateLoop();
-    }
-    function autoDonuts(){
-       
-        donutNumber += autoClickerStorage*(Math.pow(donutsToMake, multiplierStorage));
-        updateLoop();
-    }
-</script>
+    <script src="/src/js/app.js"></script>
+    </section>
+</container>
 </body>
 </html>
