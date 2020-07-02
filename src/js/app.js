@@ -1,6 +1,6 @@
 
-    let autoClickerPrice = 100;
-    let multiplierPrice = 10;
+    let autoClickerPrice = 10;
+    let multiplierPrice = 15;
     const donutNumberDisplay = document.querySelector('.donutNumber');
     const autoClickerPriceDisplay = document.querySelector('.autoClickerPrice');
     const autoClickerNumberDisplay = document.querySelector('.autoClickers');
@@ -9,7 +9,8 @@
     const autoClickerButton = document.querySelector('.autoClickerButton');
     const multiplierButton = document.querySelector('.multiplierButton');
     const donutimg = document.querySelector('.donutimg');
-    const donutbrigade =document.querySelector('.donutbrigade')
+    const donutbrigade =document.querySelector('.donutbrigade');
+    const resetButton = document.querySelector('.resetButton');
     let autoClickerStorage = 0;
     let multiplierStorage = 0;
     let donutNumber = 0;
@@ -93,3 +94,7 @@
         donutNumber += autoClickerStorage*(Math.pow(donutsToMake, multiplierStorage));
         updateLoop();
     }
+
+    function resetGame() {
+        location.reload();
+       }
