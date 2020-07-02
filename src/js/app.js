@@ -1,6 +1,6 @@
 
-    let autoClickerPrice = 10;
-    let multiplierPrice = 15;
+    let autoClickerPrice = 100;
+    let multiplierPrice = 10;
     const donutNumberDisplay = document.querySelector('.donutNumber');
     const autoClickerPriceDisplay = document.querySelector('.autoClickerPrice');
     const autoClickerNumberDisplay = document.querySelector('.autoClickers');
